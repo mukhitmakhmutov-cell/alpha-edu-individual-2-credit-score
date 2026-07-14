@@ -1,0 +1,38 @@
+# Data
+data/*.csv
+data/*.zip
+*.csv
+*.zip
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# CatBoost info
+catboost_info/
+
+# Models
+models/*.pkl
+models/*.joblib
+models/*.cbm
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Virtual env
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/
+
+# Output notebooks
+output_notebook.ipynb
