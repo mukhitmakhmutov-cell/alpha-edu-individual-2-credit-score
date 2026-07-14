@@ -92,7 +92,7 @@ jupyter nbconvert --to notebook --execute --ExecutePreprocessor.timeout=1200 --o
 
 ## 📈 Результаты
 
-### Сравнение моделей (5-fold Cross-Validation)
+### Сравнение моделей (3-fold Cross-Validation)
 
 | Модель | ROC-AUC (mean) | ROC-AUC (std) |
 |--------|---------------|---------------|
@@ -104,16 +104,18 @@ jupyter nbconvert --to notebook --execute --ExecutePreprocessor.timeout=1200 --o
 
 | Метрика | Значение |
 |---------|----------|
-| **ROC-AUC** | **0.7662** |
-| Precision | 0.7142 |
-| Recall | 0.1744 |
-| F1-score | 0.6806 |
+| **ROC-AUC** | **0.7682** |
+| Accuracy | 0.7107 |
+| Precision | 0.1729 |
+| Recall | 0.6830 |
+| F1-score | 0.2760 |
 
 ### Оптимизация гиперпараметров (Optuna)
 
-- **Количество итераций:** 15
-- **Лучший ROC-AUC:** 0.7597
+- **Количество итераций:** 30
+- **Лучший ROC-AUC (CV):** 0.7616
 - **Приоритетная модель:** CatBoost (GPU)
+- **Прирост относительно baseline:** +0.0213 ROC-AUC
 
 ## 🏗 Архитектура решения
 
@@ -134,7 +136,7 @@ jupyter nbconvert --to notebook --execute --ExecutePreprocessor.timeout=1200 --o
 1. **Baseline:** Logistic Regression, Random Forest
 2. **Основная:** CatBoost с GPU-ускорением (`task_type='GPU'`)
 3. **Оптимизация:** Optuna для подбора гиперпараметров
-4. **Кросс-валидация:** 5-fold StratifiedKFold
+4. **Кросс-валидация:** 3-fold StratifiedKFold
 
 ### GPU-ускорение
 - **GPU:** NVIDIA GeForce RTX 3050 (4GB VRAM)
